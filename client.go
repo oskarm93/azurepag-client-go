@@ -13,13 +13,15 @@ type Client struct {
 	BaseURL    string
 	HTTPClient *http.Client
 	Token      string
+	UserAgent  string
 }
 
-func NewClient(token *string) *Client {
+func NewClient(token *string, userAgent *string) *Client {
 	c := Client{
 		HTTPClient: &http.Client{Timeout: 10 * time.Second},
 		BaseURL:    BaseURL,
 		Token:      *token,
+		UserAgent:  *userAgent,
 	}
 	return &c
 }

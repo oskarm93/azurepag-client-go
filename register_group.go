@@ -9,9 +9,9 @@ import (
 
 func (c *Client) RegisterGroup(objectID string) error {
 	reqBody := struct {
-		externalID string `json:"externalId"`
+		ExternalID string `json:"externalId"`
 	}{
-		externalID: objectID,
+		ExternalID: objectID,
 	}
 	rb, err := json.Marshal(reqBody)
 	if err != nil {
