@@ -1,16 +1,3 @@
-// public async Task RegisterGroupAsync(Guid objectId, CancellationToken cancel)
-// {
-// 	var uri = $"{BaseUri}/privilegedAccess/aadGroups/resources/register";
-// 	var request = new HttpRequestMessage(HttpMethod.Post, uri);
-// 	var payload = new
-// 	{
-// 		externalId = objectId
-// 	};
-// 	var payloadJson = JsonSerializer.Serialize(payload);
-// 	request.Content = new StringContent(payloadJson, Encoding.UTF8, "application/json");
-// 	await SendRequestAsync(request, cancel);
-// }
-
 package azurepag
 
 import (
@@ -37,6 +24,7 @@ func (c *Client) RegisterGroup(objectID string) error {
 	}
 
 	body, err := c.doRequest(req)
+	_ = body // fuck this language
 	if err != nil {
 		return err
 	}
