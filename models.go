@@ -1,9 +1,14 @@
 package azurepag
 
-type RegistrationRequest struct {
-	externalID string `json:"externalId"`
+type RegisterGroupRequest struct {
+	ExternalID string `json:"externalId"`
 }
 
-type GovernanceResource struct {
-	ID string `json:"id"`
+type RoleDefinitionsResponse struct {
+	RoleDefinitions []RoleDefinition `json:"value"`
+}
+
+type RoleDefinition struct {
+	ID          string `json:"id"`
+	DisplayName string `json:"displayName"`
 }
