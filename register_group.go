@@ -19,7 +19,6 @@ func (c *Client) RegisterGroup(objectID string) error {
 	}
 
 	req, err := http.NewRequest("POST", fmt.Sprintf("%s/privilegedAccess/aadGroups/resources/register", c.BaseURL), strings.NewReader(string(rb)))
-	req.Header.Add("content-type", "application/json")
 	if err != nil {
 		return err
 	}
