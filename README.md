@@ -1,3 +1,3 @@
-## Hashicups Client (Go)
+## azurepag Client (Go)
 
-A Go library for [Hashicups](https://github.com/hashicorp-demoapp/product-api-go)
+A Go library for [azurepag](https://github.com/oskarm93/azurepag-client-go)
