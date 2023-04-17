@@ -41,7 +41,8 @@ func (c *Client) doRequest(req *http.Request) ([]byte, error) {
 		return nil, err
 	}
 
-	if res.StatusCode != http.StatusOK {
+	success := res.StatusCode >= 200 && res.StatusCode < 300
+	if !success {
 		return nil, fmt.Errorf("status: %d, body: %s", res.StatusCode, body)
 	}
 
