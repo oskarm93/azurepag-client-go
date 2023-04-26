@@ -18,7 +18,7 @@ type Client struct {
 
 func NewClient(token *string, userAgent *string) *Client {
 	c := Client{
-		HTTPClient: &http.Client{Timeout: 10 * time.Second},
+		HTTPClient: &http.Client{Timeout: 1 * time.Minute},
 		BaseURL:    BaseURL,
 		Token:      *token,
 		UserAgent:  *userAgent,
